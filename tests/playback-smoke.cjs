@@ -86,7 +86,7 @@ async function stopped(page, button = 'audioStop') {
     await recovery.close();
     console.log('PASS: progression recovers from a closed audio context after basic playback');
 
-    for (const button of ['pPlay', 'vizPlayHold']) {
+    for (const button of ['audioPlay', 'pPlay', 'vizPlayHold']) {
       const page = await browser.newPage();
       await instrument(page);
       await page.goto(url);
@@ -108,6 +108,69 @@ async function stopped(page, button = 'audioStop') {
       await page.close();
       console.log(`PASS: Stop cancels ${button} while audio resume is deferred`);
     }
+
+    for (const behavior of ['source-required', 'state-only']) {
+      for (const button of ['pPlay', 'vizPlayHold']) {
+        const page = await browser.newPage();
+        await instrument(page);
+        await page.goto(url);
+        await page.evaluate(async behavior => {
+          audioContext = new AudioContext(); await audioContext.suspend();
+          const resume = audioContext.resume.bind(audioContext);
+          const start = AudioBufferSourceNode.prototype.start;
+          window.routePrimed = false;
+          AudioBufferSourceNode.prototype.start = function (...args) {
+            window.routePrimed = true; return start.apply(this, args);
+          };
+          audioContext.resume = () => {
+            if (behavior === 'source-required') return window.routePrimed ? resume() : new Promise(() => {});
+            resume(); return new Promise(() => {});
+          };
+        }, behavior);
+        await audible(page, button);
+        await stopped(page);
+        await page.close();
+        console.log(`PASS: ${button}, ${behavior} startup compatibility simulation`);
+      }
+    }
+
+    for (const [first, next] of [['audioPlay', 'pPlay'], ['pPlay', 'audioPlay']]) {
+      const page = await browser.newPage();
+      await instrument(page);
+      await page.goto(url);
+      await page.evaluate(async () => {
+        audioContext = new AudioContext(); await audioContext.suspend();
+        const resume = audioContext.resume.bind(audioContext); let first = true;
+        audioContext.resume = () => {
+          if (!first) return resume();
+          first = false;
+          return new Promise((resolve, reject) => { window.rejectOldResume = reject; });
+        };
+      });
+      await page.click('#' + first);
+      assert.equal(await page.locator('#audioStop').isDisabled(), false, 'Stop is enabled during startup');
+      await audible(page, next);
+      await page.evaluate(() => window.rejectOldResume(Error('cancelled startup simulation')));
+      await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+      assert.equal(await page.evaluate(() => audioPlaying && !!pPlaySession), false, 'playback modes stay exclusive');
+      assert.ok(await page.evaluate(mode => mode === 'audioPlay' ? audioPlaying : !!pPlaySession, next), 'stale resume rejection does not stop the new mode');
+      await stopped(page);
+      await page.close();
+      console.log(`PASS: pending ${first} switches to ${next}, including stale rejection`);
+    }
+
+    const blocked = await browser.newPage();
+    await instrument(blocked);
+    await blocked.goto(url);
+    await blocked.evaluate(async () => {
+      audioContext = new AudioContext(); await audioContext.suspend();
+      audioContext.resume = () => new Promise(() => {});
+    });
+    await blocked.click('#pPlay');
+    await blocked.waitForFunction(() => $('pPlayStatus').textContent.includes('音声を開始できませんでした'), null, { timeout: 5000 });
+    assert.equal(await blocked.evaluate(() => pPlaySession), null);
+    await blocked.close();
+    console.log('PASS: stalled audio startup reports a retry message instead of waiting forever');
 
     const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
     await instrument(mobile, true);
