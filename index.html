@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><title>Harmonic Analyzer v4.78</title><style>
-:root{font-family:Tahoma,Verdana,'MS UI Gothic','MS PGothic',Osaka,'Hiragino Kaku Gothic ProN',sans-serif;color:#e7e7e7;background:#191919}*{box-sizing:border-box}body{margin:0;padding:16px}header{margin-bottom:16px}h1{font-size:23px;margin:0 0 4px}p{line-height:1.55;color:#bfbfbf}.layout{display:grid;grid-template-columns:minmax(275px,360px) minmax(0,1fr);gap:15px}.panel{background:#282828;border:1px solid #4b4b4b;border-radius:15px;padding:15px}label{display:block;font-size:13px;color:#d0d0d0;margin:12px 0 5px}input,select,button{font:inherit;border-radius:8px;border:1px solid #656565;background:#1e1e1e;color:#fff;padding:10px;min-width:0}button{background:#494949;border-color:#727272;cursor:pointer}button:disabled{opacity:.4}.full{width:100%}.small{font-size:12px;color:#bfbfbf}.pitchrow{display:grid;grid-template-columns:minmax(82px,1fr) minmax(70px,1fr) 65px 38px;gap:7px;margin:7px 0}.pitchrow select{width:100%}.pitchrow button{background:#574a4a}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.control{display:grid;grid-template-columns:24px minmax(86px,1fr) minmax(105px,1.5fr) 85px;gap:6px;align-items:center;padding:8px 0;border-bottom:1px solid #4b4b4b}.control select,.control input[type=number]{width:100%;padding:8px 4px;font-size:13px}.control input[type=radio]{accent-color:#68bfff;width:18px;height:18px}.control strong{font-size:13px}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:11px 8px;text-align:right;border-bottom:1px solid #4b4b4b;white-space:nowrap;font-size:13px}th:first-child,td:first-child{text-align:left}th{color:#d0d0d0;font-size:12px}.summary{background:#373737;border-radius:10px;padding:11px;margin:10px 0;font-size:13px;line-height:1.6}.warning{color:#ffd08c}.tabs{display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap}.tabs button{padding:9px 10px}.muted{opacity:.45}.tabs button.active{background:#626262;border-color:#b0b0b0}.harmgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.harmgrid label{margin:3px 0}.harmgrid select,.harmgrid input{width:100%}.chartwrap{overflow:auto;background:#131313;border:1px solid #4b4b4b;border-radius:10px;padding:8px}.chartwrap svg{display:block;width:100%;height:260px;touch-action:none;user-select:none}.chartwrap{overflow:hidden}.chartcontrols{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}.chartcontrols button{padding:6px 12px}.chartdetail{background:#373737;border:1px solid #6d6d6d;border-radius:9px;padding:10px;margin:8px 0;white-space:pre-line;font-size:13px;line-height:1.65;min-height:38px}.diffhit{background:#163d3b;color:#9ef0d2;font-weight:600}.diffmark{color:#9ef0d2;font-weight:600}.harm-exact{background:#163d30;color:#a5f1bb;font-weight:600}.harm-near{background:#51371e;color:#ffd098;font-weight:600}.harm-funddiff{background:#293960;color:#b7caff;font-weight:600}.harm-both{background:linear-gradient(110deg,#163d30 0%,#163d30 50%,#293960 50%,#293960 100%);color:#e0f4ff;font-weight:600}.legend{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0}.legend span{font-size:12px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}.pill{border-radius:6px;padding:2px 6px;background:#454545}.harmtable{max-height:340px;overflow:auto}.harmtable th{position:sticky;top:0;background:#282828}.tabs button.active{font-weight:bold}.sorthead{cursor:pointer;user-select:none;touch-action:manipulation}.sorthead:focus-visible{outline:2px solid #8cc8ff;outline-offset:-2px}.sorthead[aria-sort="ascending"],.sorthead[aria-sort="descending"]{color:#8bd1ff}.fundlist{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 12px}.fundchip{font-size:12px;padding:6px 9px;border:1px solid #666666;border-radius:8px;background:#333333}.axisnote{font-size:12px;color:#cecece;margin:7px 0}@media(max-width:790px){.harmgrid{grid-template-columns:1fr 1fr}}.hint{font-size:12px;color:#c4c4c4}.sub{font-size:11px;color:#aeaeae}.tag{display:inline-block;padding:3px 7px;border-radius:7px;background:#505050;color:#ededed}.rowhead{display:grid;grid-template-columns:24px minmax(86px,1fr) minmax(105px,1.5fr) 85px;gap:6px;font-size:11px;color:#bfbfbf;margin-top:8px}@media(max-width:790px){.layout{grid-template-columns:1fr}body{padding:11px}h1{font-size:21px}.panel{padding:12px}th,td{padding:8px 6px;font-size:12px}}
+<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><title>Harmonic Analyzer v4.79</title><style>
+:root{font-family:Tahoma,Verdana,'MS UI Gothic','MS PGothic',Osaka,'Hiragino Kaku Gothic ProN',sans-serif;color:#e7e7e7;background:#191919}*{box-sizing:border-box}body{margin:0;padding:16px}header{margin-bottom:16px}h1{font-size:23px;margin:0 0 4px}p{line-height:1.55;color:#bfbfbf}.layout{display:grid;grid-template-columns:minmax(275px,360px) minmax(0,1fr);gap:15px}.panel{background:#282828;border:1px solid #4b4b4b;border-radius:15px;padding:15px}label{display:block;font-size:13px;color:#d0d0d0;margin:12px 0 5px}input,select,button{font:inherit;border-radius:8px;border:1px solid #656565;background:#1e1e1e;color:#fff;padding:10px;min-width:0}button{background:#494949;border-color:#727272;cursor:pointer}button:disabled{opacity:.4}.full{width:100%}.small{font-size:12px;color:#bfbfbf}.pitchrow{display:grid;grid-template-columns:minmax(82px,1fr) minmax(70px,1fr) 65px 38px;gap:7px;margin:7px 0}.pitchrow select{width:100%}.pitchrow button{background:#574a4a}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.control{display:grid;grid-template-columns:24px minmax(86px,1fr) minmax(105px,1.5fr) 85px;gap:6px;align-items:center;padding:8px 0;border-bottom:1px solid #4b4b4b}.control select,.control input[type=number]{width:100%;padding:8px 4px;font-size:13px}.control input[type=radio]{accent-color:#68bfff;width:18px;height:18px}.control strong{font-size:13px}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:11px 8px;text-align:right;border-bottom:1px solid #4b4b4b;white-space:nowrap;font-size:13px}th:first-child,td:first-child{text-align:left}th{color:#d0d0d0;font-size:12px}.summary{background:#373737;border-radius:10px;padding:11px;margin:10px 0;font-size:13px;line-height:1.6}.warning{color:#ffd08c}.tabs{display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap}.tabs button{padding:9px 10px}.muted{opacity:.45}.tabs button.active{background:#626262;border-color:#b0b0b0}.harmgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.harmgrid label{margin:3px 0}.harmgrid select,.harmgrid input{width:100%}.chartwrap{background:#131313;border:1px solid #4b4b4b;border-radius:10px;padding:8px}.chartwrap svg{display:block;width:100%;height:260px;touch-action:none;user-select:none}.chartwrap{overflow:hidden}.chartcontrols{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}.chartcontrols button{padding:6px 12px}.chartdetail{background:#373737;border:1px solid #6d6d6d;border-radius:9px;padding:10px;margin:8px 0;white-space:pre-line;font-size:13px;line-height:1.65;min-height:38px}.diffhit{background:#163d3b;color:#9ef0d2;font-weight:600}.diffmark{color:#9ef0d2;font-weight:600}.harm-exact{background:#163d30;color:#a5f1bb;font-weight:600}.harm-near{background:#51371e;color:#ffd098;font-weight:600}.harm-funddiff{background:#293960;color:#b7caff;font-weight:600}.harm-both{background:linear-gradient(110deg,#163d30 0%,#163d30 50%,#293960 50%,#293960 100%);color:#e0f4ff;font-weight:600}.legend{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0}.legend span{font-size:12px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}.pill{border-radius:6px;padding:2px 6px;background:#454545}.harmtable{max-height:340px;overflow:auto}.harmtable th{position:sticky;top:0;background:#282828}.tabs button.active{font-weight:bold}.sorthead{cursor:pointer;user-select:none;touch-action:manipulation}.sorthead:focus-visible{outline:2px solid #8cc8ff;outline-offset:-2px}.sorthead[aria-sort="ascending"],.sorthead[aria-sort="descending"]{color:#8bd1ff}.fundlist{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 12px}.fundchip{font-size:12px;padding:6px 9px;border:1px solid #666666;border-radius:8px;background:#333333}.axisnote{font-size:12px;color:#cecece;margin:7px 0}@media(max-width:790px){.harmgrid{grid-template-columns:1fr 1fr}}.hint{font-size:12px;color:#c4c4c4}.sub{font-size:11px;color:#aeaeae}.tag{display:inline-block;padding:3px 7px;border-radius:7px;background:#505050;color:#ededed}.rowhead{display:grid;grid-template-columns:24px minmax(86px,1fr) minmax(105px,1.5fr) 85px;gap:6px;font-size:11px;color:#bfbfbf;margin-top:8px}@media(max-width:790px){.layout{grid-template-columns:1fr}body{padding:11px}h1{font-size:21px}.panel{padding:12px}th,td{padding:8px 6px;font-size:12px}}
 details.settings-fold{margin-top:12px;border:1px solid #595959;border-radius:10px;background:#242424;overflow:hidden}details.settings-fold>summary{cursor:pointer;list-style:none;padding:12px 14px;font-weight:650;display:flex;align-items:center;justify-content:space-between;gap:8px;touch-action:manipulation}details.settings-fold>summary::-webkit-details-marker{display:none}details.settings-fold>summary:after{content:"▾";color:#c8c8c8;font-size:17px}details.settings-fold[open]>summary:after{content:"▴"}details.settings-fold[open]>summary{border-bottom:1px solid #595959}details.settings-fold>.fold-body{padding:0 12px 13px}details.settings-fold .fold-note{font-size:11px;font-weight:400;color:#bfbfbf}details.settings-fold>summary:focus-visible{outline:2px solid #b7b7b7;outline-offset:-3px}
 
 [hidden]{display:none!important}
-#progressPane .pgrid{overflow-x:auto;margin:12px 0}#progressPane table{min-width:560px}#progressPane td,#progressPane th{text-align:left;border:1px solid #525252;padding:8px;vertical-align:top}#progressPane td select{width:100%;padding:7px 3px;margin-bottom:5px}#progressPane .pval{font-size:12px;color:#d2d2d2;line-height:1.6}#progressPane .pbuttons{display:flex;gap:8px;flex-wrap:wrap}#progressPane .pbuttons button{flex:1}#progressPane .pfield{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}#progressPane .pfield label{display:block}#progressPane input[type=checkbox]{width:auto}#progressPane .pnote-pickers{display:grid;grid-template-columns:minmax(92px,1fr) 68px;gap:6px;align-items:center;min-width:0}#progressPane .pnote-pickers select{width:100%;min-width:0;max-width:100%;margin:0;padding:7px 3px;font-size:14px}#progressPane td{min-width:180px}#progressPane td .pval{margin-top:7px;white-space:normal}#progressPane .pgrid{max-width:100%;-webkit-overflow-scrolling:touch}#progressPane table{table-layout:fixed;width:max-content;min-width:100%}#progressPane th:first-child{width:92px;min-width:92px;position:sticky;left:0;background:#282828;z-index:1}#progressPane td:not(:first-child),#progressPane th:not(:first-child){width:185px}#progressPane .p-pick{padding:7px 9px;white-space:nowrap;font-size:13px}#progressPane .p-pick.picked{background:#666666;color:white;border:1px solid #b4b4b4}#progressPane .pbuttons{display:flex;flex-wrap:wrap;gap:7px}
+#progressPane .pgrid{overflow-x:auto;margin:12px 0}#progressPane table{min-width:560px}#progressPane td,#progressPane th{text-align:left;border:1px solid #525252;padding:8px;vertical-align:top}#progressPane td select{width:100%;padding:7px 3px;margin-bottom:5px}#progressPane .pval{font-size:12px;color:#d2d2d2;line-height:1.6}#progressPane .pfield{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}#progressPane .pfield label{display:block}#progressPane input[type=checkbox]{width:auto}#progressPane .pnote-pickers{display:grid;grid-template-columns:minmax(92px,1fr) 68px;gap:6px;align-items:center;min-width:0}#progressPane .pnote-pickers select{width:100%;min-width:0;max-width:100%;margin:0;padding:7px 3px;font-size:14px}#progressPane td{min-width:180px}#progressPane td .pval{margin-top:7px;white-space:normal}#progressPane .pgrid{max-width:100%;-webkit-overflow-scrolling:touch}#progressPane table{table-layout:fixed;width:max-content;min-width:100%}#progressPane th:first-child{width:92px;min-width:92px;position:sticky;left:0;background:#282828;z-index:1}#progressPane td:not(:first-child),#progressPane th:not(:first-child){width:185px}#progressPane .p-pick{padding:7px 9px;white-space:nowrap;font-size:13px}#progressPane .p-pick.picked{background:#666666;color:white;border:1px solid #b4b4b4}#progressPane .pbuttons{display:flex;flex-wrap:wrap;gap:7px}
 #progressPane .p-voice-head{font-size:12px;white-space:normal;text-align:left;border-left:5px solid transparent}#progressPane .p-voice-0{background:#4b3d29;border-left-color:#f3c478}#progressPane .p-voice-1{background:#1d4054;border-left-color:#78d0f3}#progressPane .p-voice-2{background:#433052;border-left-color:#d6a8fb}#progressPane .p-voice-3{background:#234b3c;border-left-color:#89d6a7}#progressPane .p-voice-tag{display:inline-block;min-width:23px;font-weight:800;text-decoration:underline}#pScore,#pGrid{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
 .mixer-row{display:grid;grid-template-columns:65px minmax(65px,1fr) 44px 34px 34px;gap:6px;align-items:center;margin:8px 0;padding:7px;border-radius:8px;background:#333333}.mixer-row input[type=range]{width:100%;min-width:0}.mixer-row button{padding:7px 3px;min-width:0}.mixer-row button[aria-pressed=true]{background:#686868;color:white;border-color:#c0c0c0}.mixer-source{grid-column:1/-1;width:100%;padding:6px}.mixer-row .mix-name{font-size:12px;font-weight:bold}.mixer-row .mix-num{font-size:12px;text-align:right;font-variant-numeric:tabular-nums}@media(max-width:390px){.mixer-row{grid-template-columns:48px minmax(50px,1fr) 36px 29px 29px;gap:3px;padding:5px}.mixer-source{grid-column:1/-1;width:100%;padding:6px}.mixer-row .mix-name{font-size:11px}}
 
@@ -52,7 +52,7 @@ details.settings-fold{margin-top:12px;border:1px solid #595959;border-radius:10p
 #mixerPlaybackHub #mixerSourceSummary{overflow-wrap:anywhere}
 @media(max-width:390px){#mixerPlaybackHub .mixer-row{grid-template-columns:minmax(0,1fr) 43px 29px 29px;gap:3px;padding:5px}}
 #harmChart,#diffChart{position:relative;width:100%;min-width:0;overflow:hidden;touch-action:none}
-#harmChart svg,#diffChart svg{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:850/260;touch-action:none;user-select:none;overflow:hidden}
+#harmChart svg,#diffChart svg{display:block;max-width:100%;touch-action:none;user-select:none;overflow:hidden}
 #diffChart{min-height:0}
 #harmChart svg,#diffChart svg{width:100%;height:225px;aspect-ratio:auto}
 #playbackFold{margin-bottom:10px}
@@ -409,7 +409,6 @@ input[type="checkbox"]:focus-visible {outline:2px solid #dedede;outline-offset:3
 #basicSettingsPanel .settings-fold>summary{padding-right:14px}
 #harmDetail:empty,#diffDetail:empty,#pPresetStatus:empty,#pInferStatus:empty{display:none!important}
 /* Longer action labels should form readable rows instead of narrow vertical columns. */
-#progressPane .pbuttons button{flex:1 1 145px;min-width:125px;min-height:42px;word-break:keep-all;overflow-wrap:normal;line-height:1.5}
 /* Keep dynamic results while suppressing repeated usage instructions in the lab view. */
 .viz-timeline-hint,.viz-lorenz-hint{display:none!important}
 @media(max-width:650px), (orientation:landscape) and (max-width:1000px) and (max-height:600px){
@@ -481,7 +480,7 @@ input[type="checkbox"]:focus-visible {outline:2px solid #dedede;outline-offset:3
 <button aria-label="② コード進行を再生" aria-pressed="false" id="mobilePlay2" title="② コード進行" type="button">▶2</button>
 <button aria-label="③ 選択した和音を再生" aria-pressed="false" id="mobilePlay3" title="③ 選択した和音" type="button">▶3</button>
 <button aria-label="再生を停止" id="mobileStop" title="停止" type="button">■</button>
-</nav><header><h1>Harmonic Analyzer <span class="small">v4.78</span></h1></header><div class="layout"><section aria-label="基本設定" class="panel" id="basicSettingsPanel"><h2>基本設定</h2><div class="grid2"><div><label for="pitch">A4 基準周波数</label><select class="full" id="pitch"><option value="435">435 Hz</option><option value="436">436 Hz</option><option value="437">437 Hz</option><option value="438">438 Hz</option><option value="439">439 Hz</option><option selected="" value="440">440 Hz</option><option value="441">441 Hz</option><option value="442">442 Hz</option><option value="443">443 Hz</option><option value="444">444 Hz</option><option value="445">445 Hz</option></select></div><div><label for="temperament">調律方式</label><select class="full" id="temperament"><option value="just">純正律</option><option value="equal">12平均律</option><option value="pyth">ピタゴラス音律</option></select></div></div><details class="settings-fold" id="noteFold"><summary><span>構成音・声部</span></summary><div class="fold-body"><div class="rowhead"><span>声部</span><span>音名</span><span>変化</span><span>Oct.</span><span>×</span></div><div id="pitchrows"></div><button class="full" id="addnote" type="button">＋ 構成音を追加</button><p class="small" id="noteCount"></p></div></details><details class="settings-fold" id="ratioFold"><summary><span>固定音・調律比・微調整</span></summary><div class="fold-body"><h3>固定音・調律比・微調整</h3><div class="grid2"><div><label for="anchorMode">固定音の周波数の決め方（A4基準）</label><select class="full" id="anchorMode"><option value="equal">平均律</option><option value="just">純正律（A起点）</option><option value="pyth">ピタゴラス音律（A起点）</option></select></div><div><label>固定音の基準周波数</label><div class="summary" id="anchorInfo" style="margin:0">—</div></div></div><div class="rowhead"><span>固定</span><span>音名</span><span>固定音に対する比率</span><span>追加 ±¢</span></div><div id="controls"></div><button class="full" id="reset" style="margin-top:12px" type="button">比率と微調整を初期化</button><button class="full" id="resetAll" style="margin-top:8px;background:#69414b;border-color:#986372" type="button">すべてリセット（構成音も初期化）</button><p class="warning" id="error"></p></div></details><details class="settings-fold" id="playbackFold" open=""><summary><span>再生コントロール</span></summary><div class="fold-body"><div class="mixer-playback-hub" id="playbackHub"><div class="pfield"><div><label for="vizHarmony">コード進行再生・可視化の音律</label><select class="full" id="vizHarmony"><option value="main">基本設定の音律に従う</option><option selected="" value="follow">コード進行の音律設定に従う</option><option value="just">純正律</option><option value="equal">12平均律</option><option value="pyth">ピタゴラス音律</option></select></div></div><div class="mixer-play-section"><button class="mix-play-button" id="audioPlay" style="flex:1" type="button">▶ ① 基本設定の和音</button><button class="mix-play-button" id="pPlay" type="button">▶ ② コード進行</button><button class="mix-play-button" id="vizPlayHold" type="button">▶ ③ 選択した和音</button><button class="mix-stop-button" id="audioStop" style="flex:1" type="button">■ 停止</button></div><label for="vizChordPick">再生するコード進行内の和音</label><select class="full" id="vizChordPick"></select><div class="small" id="pSourceSummary"></div><p aria-live="polite" class="small" id="audioStatus" role="status">停止中</p><div aria-live="polite" class="small" id="pPlayStatus">停止中</div></div></div></details><details class="settings-fold" id="mixerFold" open=""><summary><span>構成音ミキサー</span></summary><div class="fold-body"><div class="mixer-playback-hub" id="mixerPlaybackHub"><h3>構成音ミキサー</h3><div aria-live="polite" class="summary" id="mixerSourceSummary"></div><label class="mixer-unify-option" style="display:flex;align-items:center;gap:9px;margin:10px 0"><input type="checkbox" id="mixerUnifySources" style="width:auto"> 音源を統一（次の音源変更から連動）</label><div id="mixerRows"></div><div><label for="audioVolume">音量（全体）</label><input id="audioVolume" max="100" min="0" style="width:100%" type="range" value="15"/><span class="small" id="audioVolumeText">15%</span></div><button class="full" id="mixerReset" style="margin-top:8px" type="button">ミキサーを初期化</button><div hidden="hidden"><button id="pPlaySelected" type="button">▶ 選択和音から再生</button><button disabled="" id="pStop" type="button">■ 停止</button><button id="vizPlayAll" type="button">▶ 最初から再生</button><button id="vizStopAudio" type="button">■ 停止</button><p class="small" id="vizSourceSummary"></p><p aria-live="polite" class="small" id="vizAudioStatus">停止中</p></div></div></div></details><nav aria-label="おまけ・補足ページ" class="page-navigation page-navigation-side" id="pageNavigation">
+</nav><header><h1>Harmonic Analyzer <span class="small">v4.79</span></h1></header><div class="layout"><section aria-label="基本設定" class="panel" id="basicSettingsPanel"><h2>基本設定</h2><div class="grid2"><div><label for="pitch">A4 基準周波数</label><select class="full" id="pitch"><option value="435">435 Hz</option><option value="436">436 Hz</option><option value="437">437 Hz</option><option value="438">438 Hz</option><option value="439">439 Hz</option><option selected="" value="440">440 Hz</option><option value="441">441 Hz</option><option value="442">442 Hz</option><option value="443">443 Hz</option><option value="444">444 Hz</option><option value="445">445 Hz</option></select></div><div><label for="temperament">調律方式</label><select class="full" id="temperament"><option value="just">純正律</option><option value="equal">12平均律</option><option value="pyth">ピタゴラス音律</option></select></div></div><details class="settings-fold" id="noteFold"><summary><span>構成音・声部</span></summary><div class="fold-body"><div class="rowhead"><span>声部</span><span>音名</span><span>変化</span><span>Oct.</span><span>×</span></div><div id="pitchrows"></div><button class="full" id="addnote" type="button">＋ 構成音を追加</button><p class="small" id="noteCount"></p></div></details><details class="settings-fold" id="ratioFold"><summary><span>固定音・調律比・微調整</span></summary><div class="fold-body"><h3>固定音・調律比・微調整</h3><div class="grid2"><div><label for="anchorMode">固定音の周波数の決め方（A4基準）</label><select class="full" id="anchorMode"><option value="equal">平均律</option><option value="just">純正律（A起点）</option><option value="pyth">ピタゴラス音律（A起点）</option></select></div><div><label>固定音の基準周波数</label><div class="summary" id="anchorInfo" style="margin:0">—</div></div></div><div class="rowhead"><span>固定</span><span>音名</span><span>固定音に対する比率</span><span>追加 ±¢</span></div><div id="controls"></div><button class="full" id="reset" style="margin-top:12px" type="button">比率と微調整を初期化</button><button class="full" id="resetAll" style="margin-top:8px;background:#69414b;border-color:#986372" type="button">すべてリセット（構成音も初期化）</button><p class="warning" id="error"></p></div></details><details class="settings-fold" id="playbackFold" open=""><summary><span>再生コントロール</span></summary><div class="fold-body"><div class="mixer-playback-hub" id="playbackHub"><div class="pfield"><div><label for="vizHarmony">コード進行再生・可視化の音律</label><select class="full" id="vizHarmony"><option value="main">基本設定の音律に従う</option><option selected="" value="follow">コード進行の音律設定に従う</option><option value="just">純正律</option><option value="equal">12平均律</option><option value="pyth">ピタゴラス音律</option></select></div></div><div class="mixer-play-section"><button class="mix-play-button" id="audioPlay" style="flex:1" type="button">▶ ① 基本設定の和音</button><button class="mix-play-button" id="pPlay" type="button">▶ ② コード進行</button><button class="mix-play-button" id="vizPlayHold" type="button">▶ ③ 選択した和音</button><button class="mix-stop-button" id="audioStop" style="flex:1" type="button">■ 停止</button></div><label for="vizChordPick">再生するコード進行内の和音</label><select class="full" id="vizChordPick"></select><div class="small" id="pSourceSummary"></div><p aria-live="polite" class="small" id="audioStatus" role="status">停止中</p><div aria-live="polite" class="small" id="pPlayStatus">停止中</div></div></div></details><details class="settings-fold" id="mixerFold" open=""><summary><span>構成音ミキサー</span></summary><div class="fold-body"><div class="mixer-playback-hub" id="mixerPlaybackHub"><h3>構成音ミキサー</h3><div aria-live="polite" class="summary" id="mixerSourceSummary"></div><label class="mixer-unify-option" style="display:flex;align-items:center;gap:9px;margin:10px 0"><input type="checkbox" id="mixerUnifySources" style="width:auto"> 音源を統一（次の音源変更から連動）</label><div id="mixerRows"></div><div><label for="audioVolume">音量（全体）</label><input id="audioVolume" max="100" min="0" style="width:100%" type="range" value="15"/><span class="small" id="audioVolumeText">15%</span></div><button class="full" id="mixerReset" style="margin-top:8px" type="button">ミキサーを初期化</button><div hidden="hidden"><button id="pPlaySelected" type="button">▶ 選択和音から再生</button><button disabled="" id="pStop" type="button">■ 停止</button><button id="vizPlayAll" type="button">▶ 最初から再生</button><button id="vizStopAudio" type="button">■ 停止</button><p class="small" id="vizSourceSummary"></p><p aria-live="polite" class="small" id="vizAudioStatus">停止中</p></div></div></div></details><nav aria-label="おまけ・補足ページ" class="page-navigation page-navigation-side" id="pageNavigation">
 <button id="pageLab" type="button">音の可視化〈おまけ〉</button>
 <button id="pageNotes" type="button">補足・備考</button>
 </nav></section><section class="panel" id="analysisPanel"><button class="page-back" id="pageAnalysis" type="button" hidden>← 音律解析へ戻る</button><h2 id="rightPanelTitle">音律解析</h2><div class="tabs" id="analysisTabs"><button class="active" id="tabTuning" type="button">基音</button><button id="tabHarm" type="button">倍音</button><button id="tabDiff" type="button">差音</button><button id="tabWave" type="button">波形</button><button id="tabProgress" type="button">進行</button><button id="tabModes" type="button">旋法</button></div><!-- v5.1+: modal melody presets, score, equal-vs-Pythagorean cents, chromatic transposition retaining Pythagorean comma. Deferred. --><div id="modesPane" hidden aria-label="旋法"></div><div id="tuningPane"><div class="summary" id="status"></div><div aria-live="polite" class="summary" id="chordCandidates"></div><div class="scroll"><table><thead><tr><th>音名</th><th>周波数 Hz</th><th>平均律偏差 ¢</th><th>固定音から ¢</th><th>実際の比率（近似）</th><th>近似誤差 ¢</th></tr></thead><tbody id="results"></tbody></table></div>
@@ -530,7 +529,7 @@ input[type="checkbox"]:focus-visible {outline:2px solid #dedede;outline-offset:3
 
 </div>
 <div hidden="" id="progressPane">
-<div class="summary" id="pPresetPanel" style="margin-bottom:12px"><label for="pPreset"><strong>コード進行プリセット</strong></label><select class="full" id="pPreset"><option selected="" value="">— プリセットを選択 —</option><option value="cadence">サンプル１</option><option value="sample2">サンプル2</option><option value="sample3">サンプル3</option></select><p aria-live="polite" class="small" id="pPresetStatus"></p></div>
+<div class="summary" id="pPresetPanel" style="margin-bottom:12px"><label for="pPreset"><strong>コード進行プリセット</strong></label><select class="full" id="pPreset"><option selected="" value="">— プリセットを選択 —</option></select><p aria-live="polite" class="small" id="pPresetStatus"></p></div>
 <div class="summary p-transpose-panel" id="pTransposePanel">
  <strong>移調</strong>
  <div class="p-transpose-fields">
@@ -568,7 +567,7 @@ input[type="checkbox"]:focus-visible {outline:2px solid #dedede;outline-offset:3
 <div id="notesGroups"><details class="notes-group" id="noteHelp_basic"><summary>基本設定・再生  ·  9件</summary><div class="notes-body"><p class="small">基本設定の再生ボタン①は和音、②はコード進行、③は選択和音を再生します。停止ボタンは共通です。</p><p class="small">iPhone・Androidでは、それぞれの再生・停止ボタンを画面上部に固定しています。</p><p class="small">進行のプリセットは登録された音高と休符をそのまま読み込み、現在の進行を置き換えます。必要に応じて進行タブの「移調」を使ってください。</p><p class="small">進行の「移調」では、まず「現在の調」を自分で判断して指定し、「移調先」を選んで適用します。ソフトウェアがコード進行の調を自動判定するわけではありません。移調後は「現在の調」が移調先に更新されます。</p><p class="small">長調は長音階、短調は暫定的に和声的短音階（第7音を半音上げる）を使います。音階上の度数と元の臨時記号のずれを保って変換するため、長調と短調の切替ではコードの音程構造も変わります。休符は維持します。ダブルフラット・ダブルシャープを含め、可能な範囲で音名を保持します。3重以上の変化記号が必要な場合は移調を中止します。</p><p class="small">各音に声部を割り当てます（同じ声部を複数音に設定することもできます）。</p><p class="small">●を付けた音を<strong>周波数の基準</strong>として固定します。他の音はその音に対する比率で計算します。調律比を選んだあと、±セントで追加調整できます。</p><p class="small">進行の再生と音の可視化に共通です。初期状態では「コード進行の音律設定に従う」が選択され、旋律と和声の別々の音律をそのまま使います。「基本設定の音律に従う」を選んだ場合には、その音律で両方を上書きします。</p><p class="hint">音色は構成音ごとに選べます。/ / はGAE（General American English）のIPA表記です。フォルマントは代表値を使う近似で、実際の発話・歌声とは異なります。</p></div></details><details class="notes-group" id="noteHelp_tuning"><summary>基音  ·  5件</summary><div class="notes-body"><p class="small">構成音の音高クラスから推定した暫定順位です。転回形は最低音をスラッシュ表記し、調性・進行・声部の機能は未考慮です。コードネームは調律比を自動決定しません。</p><p class="hint ipa-legend-note">左はIPAの慣例に合わせ、同じ調音位置で非円唇（左）と円唇（右）の記号を隣り合わせにした模式図です。暗い灰色の補助記号はGAE音源の選択対象外です。右はGAE母音合成に使う代表的なF1・F2の周波数を座標にした図です。二重母音は軌跡と現在位置を表示します。選択できる母音記号をタップすると、構成音の音色が切り替わります。実際の発話・歌声の測定値ではありません。</p><p class="hint">純正律では固定音から短七度（10半音）の構成音について7:4（オクターブ違いはその換算比）を初期候補として優先します。ほかの比率にも変更できます。純正律では選択した比率が基準になります。微調整後の「実際の比率」は近似値であり、元の選択比率とは異なる場合があります。</p><p class="hint"><strong>記号の意味：</strong>✓ は表示された整数比と計算上の比率がほぼ完全一致（誤差0.00001¢未満）、≈ は近似比率を示します。右端の「近似誤差 ¢」は、実際の比率と表示された整数比との差の絶対値です。</p><p class="hint">平均律の比率は一般に無理数です。整数比は分子・分母をそれぞれ最大128として近似します。<strong>厳密一致と近似は区別</strong>して表示します。</p></div></details><details class="notes-group" id="noteHelp_harm"><summary>倍音  ·  7件</summary><div class="notes-body"><p class="small">倍音スペクトルの線を選択すると、構成音・次数・周波数を表示します。複数の成分が近接している場合はまとめて表示します。</p><div class="summary">音律タブの現在の周波数を使って倍音を計算します。</div><p class="hint">F1〜F3はアメリカ英語の参考フォルマント値（成人男性の代表値と一部推定値）です。音色によって倍音の周波数は変わらず振幅が変化します。特に「振幅変化（dB）」表示で比較してください。実際の音声の測定値ではありません。</p><p class="hint">/eɪ/・/oʊ/・/aɪ/・/aʊ/・/ɔɪ/のフォルマントを始点から終点へ補間します。単母音は変化しません。表示と持続音はこの位置の静的な音色です。</p><p class="hint">横軸＝周波数（Hz）。配置モードでは全倍音の位置を表示します。dBモードは仮想的な基準スペクトル（0.2／次数の0.75乗）からの振幅変化です。同一周波数の倍音は黄色でモデル相対パワーの合算値を表示します（個々のdB値の平均ではありません）。位相は考慮せず、周波数が近いだけの成分は加算しません。dB軸は−30〜＋30の範囲を表示し、範囲外の値は端に収めます。<strong>実測音量ではありません。</strong> 基音は白い丸で示します。線をタップすると近接する成分を一覧表示します。</p><p class="hint"><strong>周波数の横の％について：</strong>各声部の音色設定から計算した、その倍音のモデル上の相対振幅（0〜100％）です。100％はこの合成音源モデル内での振幅上限を表し、基音との比率や実測音圧ではありません。複数声部が重なることによる増加分は、この％には含みません。</p><p class="hint"><span class="harm-exact">緑＝一致</span> ／ <span class="harm-near">オレンジ＝近接</span> ／ <span class="harm-funddiff">青紫＝基音間差周波数と一致</span>。両方に該当する場合は2色で表示します。</p></div></details><details class="notes-group" id="noteHelp_diff"><summary>差音  ·  5件</summary><div class="notes-body"><p class="small">差音スペクトルの線を選択すると、周波数と計算元を表示します。</p><div class="summary">差周波数は計算上の候補です。dB表示は仮想的な基準倍音スペクトルに対する振幅積の変化です。同一差周波数の候補は位相を考慮せずモデル相対パワーを加算します。縮小表示で異なる周波数が同じ画素に重なるときは、その中で最も強い候補群だけを描き、異なる周波数同士の強度は足しません。dB軸は−30〜＋30で、範囲外の値は端に収めます。実際の差音の音圧・聴感強度ではありません。</div><p class="hint">選択した計算対象から求めた差周波数を表示します。縦線は差周波数の位置を表し、高さはすべて同じです（振幅・音量ではありません）。線をタップすると発生元を表示します。dB表示は仮想的な基準との比較です。</p><p class="hint">母音の違いは強度（dB）表示に反映します。差周波数の位置自体は変わりません。二重母音は選択した位置のフォルマントで計算します。</p><p class="hint">選択した3分類の周波数差 |f₂−f₁| を表示します（0Hzは除外）。見出しをタップして並べ替えできます。同じ差周波数の候補は1行にまとめます。行をタップすると計算元の組み合わせをすべて確認できます。表示は周波数ごとに上位80件です。</p></div></details><details class="notes-group" id="noteHelp_wave"><summary>波形  ·  5件</summary><div class="notes-body"><div class="summary">構成音・倍音から最大4成分を選び、時間軸上の正弦波を比較します。合成波形は線形和、差周波数は数学的な候補です。実際の音量や結合音の発生を示しません。</div><p class="hint">C・Dは「使用しない」も選べます。個別波形・線形合成・二乗歪みは有効な全成分を使用します。うなりと差周波数は指定した2成分を使用します。二乗歪みは正規化した入力の二乗から直流成分を除いた数学モデルで、実際の音響歪みを推定するものではありません。</p><p class="hint">● は成分AとBの正弦波がともにゼロとなる時点（共通の節）を示します。描画時間内で厳密に一致する場合のみ表示し、近接は含みません。</p><p class="hint">上で選択した成分Aを横軸（X）、成分Bを縦軸（Y）に割り当てます。時間を媒介変数として、2つの正弦波の関係を描画します。</p><p class="hint">横軸は時間、縦軸は正規化した振幅です。波形は位相0・振幅1の理想的な正弦波として計算します。長い時間幅で高周波を表示すると画素密度による折り返しが起こるため、その場合は包絡線・差周波数表示を使ってください。</p></div></details><details class="notes-group" id="noteHelp_progress"><summary>進行  ·  7件</summary><div class="notes-body"><p class="small">プリセットの選択は現在の進行を置き換えます。「基本設定の和音を追加」は、選択中の和音の後に構成音を取り込みます。進行は4声部固定のため最大4音までです。</p><p class="small">楽曲名を付けた追加プリセットについて：「歓喜の歌」と「新世界より」第2楽章はパブリックドメインの旋律をLeadに配置し、他の3声部は独自の学習用配置です。「Tonight」は公開されている和音進行を参考にした和声例のみで、原曲の旋律や原編曲は収録していません。いずれも現在の進行機能では旋律の音価・リズムを再現しません。</p><p class="small">和音の見出しをタップすると選択できます。基本設定から進行に追加した和音は、その時点の固定音基準周波数・調律比・微調整を個別調律として引き継ぎます。進行の各和音は「選択和音の調律」で整数比と±セントを編集できます。これは和声の音律が純正律の場合に適用され、音律を平均律・ピタゴラス音律にしたときは適用されません。基本設定へ逆に書き戻す操作は音名・オクターブのみを反映します。</p><p class="small">旋律と和声は別に計算します。旋律をピタゴラス音律にすると、「現在の調」の主音を平均律の周波数に固定し、そこから純正五度を重ねた音高を用います。和声を純正律にすると、旋律の周波数を保持したまま和音の推定根音を定め、根音から各声部の整数比を求めます。判定が曖昧な和音では「選択和音の調律」で基準音と各声部の比率を確認・調整してください。</p><p class="small">「全区間固定」をオンにすると、最初の和音の周波数を後続の和音でも保持します。任意の時点からの固定は次版以降に実装します。</p><p class="small"><span id="pScoreHint">すべて全音符として表示します。声部の略号は基本設定の構成音に連動し、数値は同名音の十二平均律からの偏差（¢）です。和音の見出しをタップすると選択できます。</span></p><p class="hint">調性の自動推定と短音階への自動変換は行いません。和音は音名とオクターブを直接編集できます。</p></div></details><details class="notes-group" id="noteHelp_modes"><summary>旋法  ·  1件</summary><div class="notes-body"><p class="small">現段階では未実装です。自然短音階・和声的短音階・旋律的短音階の扱いは、今後の「旋法」タブで検討します。</p></div></details><details class="notes-group" id="noteHelp_visual"><summary>音の可視化（おまけ）  ·  4件</summary><div class="notes-body"><p class="small">可視化カードのシークバーは設定した描画時間の範囲を動きます。ローレンツ図形は音の情報を係数に用いた数学的図形であり、音波そのものではありません。</p><div class="summary"><strong>音の可視化（試験実装）</strong>　リサージュ・ハーモノグラフ・クラドニ図形・バラ曲線・フーリエ・エピサイクル・スピログラフ・ローレンツ・アトラクターを自由に追加できます。初期状態は2枚、最大枚数の固定制限はありません。ただし描画負荷は端末に依存します。コード進行の再生中は現在の和音の周波数を参照し、停止中は選択した和音を表示します。X・Yは声部で固定され、音名が変わっても選択は維持されます。</div><p class="hint">クラドニ図形のモデル：理想化した正方形の振動膜を仮定し、固定端の固有モードを重ねた「クラドニ風」の節模様を描画します。実際の金属板のクラドニ図形とは固有振動・境界条件が異なります。声部ごとの基音・倍音・母音フォルマントによる振幅・構成音ミキサーの音量を入力し、各モードへの励振量を近似します。砂粒は節線近傍に確率的に配置した視覚表現で、砂粒の実際の移動や音圧を物理シミュレーションするものではありません。モードの重ね合わせは位相を固定した近似であり、時間平均の厳密な振動エネルギー分布ではありません。調律は可視化タブの選択を使用します。</p><p class="hint">リサージュ：X＝sin(2πfₓt)、Y＝sin(2πfᵧt＋位相)。ハーモノグラフ：2組の減衰振動の合成で描く数学的なモデルです。いずれも音圧を測定した図形ではありません。再生中の周波数と図形の時間軸は連動しますが、音声の瞬間位相を取得しているわけではありません。</p></div></details></div>
 </section></section></div><script>
 'use strict';
-const $=id=>document.getElementById(id);const spellings=['C','C♯','D♭','C♭','D','D♯','E♭','E','E♯','F♭','F','F♯','G♭','G','G♯','A♭','A','A♯','B♭','B','B♯'];const semis={C:0,D:2,E:4,F:5,G:7,A:9,B:11};const pyth=[1,256/243,9/8,32/27,81/64,4/3,729/512,3/2,128/81,27/16,16/9,243/128];const just=[1,16/15,9/8,6/5,5/4,4/3,45/32,3/2,8/5,5/3,9/5,15/8];const voices=['Tenor','Lead','Baritone','Bass','Soprano','Alto','Mezzo','Top','Second'];const initialNotes=()=>[{name:'A',oct:4,id:1,adjust:0,ratio:null,voice:'Bass'},{name:'C♯',oct:5,id:2,adjust:0,ratio:null,voice:'Baritone'},{name:'E',oct:5,id:3,adjust:0,ratio:null,voice:'Lead'},{name:'G',oct:5,id:4,adjust:0,ratio:null,voice:'Tenor'}];let selected=initialNotes(),nextId=5,lockedId=1,anchorHz=440;
+const $=id=>document.getElementById(id);const semis={C:0,D:2,E:4,F:5,G:7,A:9,B:11};const pyth=[1,256/243,9/8,32/27,81/64,4/3,729/512,3/2,128/81,27/16,16/9,243/128];const just=[1,16/15,9/8,6/5,5/4,4/3,45/32,3/2,8/5,5/3,9/5,15/8];const voices=['Tenor','Lead','Baritone','Bass','Soprano','Alto','Mezzo','Top','Second'];const initialNotes=()=>[{name:'A',oct:4,id:1,adjust:0,ratio:null,voice:'Bass'},{name:'C♯',oct:5,id:2,adjust:0,ratio:null,voice:'Baritone'},{name:'E',oct:5,id:3,adjust:0,ratio:null,voice:'Lead'},{name:'G',oct:5,id:4,adjust:0,ratio:null,voice:'Tenor'}];let selected=initialNotes(),nextId=5,lockedId=1,anchorHz=440;
 // One written note = diatonic letter plus an explicit accidental. Do not
 // collapse enharmonic spellings; Pythagorean commas are intentionally retained.
 const noteLetters=['C','D','E','F','G','A','B'];
@@ -1371,11 +1370,12 @@ function attachVoiceCleanup(osc,gain,mixEntry){
   if(generation===mixEntry.generation){disconnectAudioNodes(mixEntry.gain);mixerGainNodes.delete(mixEntry)}
  },{once:true});
 }
-const audioSources={sine:{label:'声部ミキサーの音色',create(ctx,hz,voice,noteId){const osc=createVoiceOscillator(ctx,hz,voice,noteId);return {node:osc,osc,setFrequency(f){if(f!==hz){applyVoiceWave(osc,ctx,f,voice,noteId);hz=f;osc.frequency.setTargetAtTime(f,ctx.currentTime,.015)}},stop(t){osc.stop(t)}}}}};
+function createAudioSource(ctx,hz,voice,noteId){
+ const osc=createVoiceOscillator(ctx,hz,voice,noteId);
+ return {node:osc,osc,setFrequency(f){if(f!==hz){applyVoiceWave(osc,ctx,f,voice,noteId);hz=f;osc.frequency.setTargetAtTime(f,ctx.currentTime,.015)}},stop(t){osc.stop(t)}};
+}
 let audioContext=null,audioMaster=null,audioVoices=new Map(),audioPlaying=false,audioRequestToken=0;
-const audioChosen=new Set(initialNotes().map(n=>n.id));
 function refreshAudioUI(){
- audioChosen.clear();selected.forEach(n=>audioChosen.add(n.id));
  refreshMixerSources();
  if(audioPlaying)syncAudioVoices();
 }
@@ -1383,12 +1383,11 @@ function ensureAudioMaster(){
  if(!audioContext)throw Error('音声コンテキストが初期化されていません');
  if(!audioMaster){audioMaster=audioContext.createGain();audioMaster.gain.value=0;audioMaster.connect(audioContext.destination)}
 }
-function sourceForAudio(){return audioSources.sine}
 function syncAudioVoices(){
  if(!audioPlaying||!audioContext)return;
- const chosen=selected.filter(n=>audioChosen.has(n.id));const ids=new Set(chosen.map(n=>n.id));const now=audioContext.currentTime;
+ const chosen=selected;const ids=new Set(chosen.map(n=>n.id));const now=audioContext.currentTime;
  for(const [id,v] of audioVoices){if(!ids.has(id)){v.gain.gain.setTargetAtTime(0,now,.015);try{v.source.stop(now+.12)}catch(e){}if(v.mixEntry)mixerGainNodes.delete(v.mixEntry);audioVoices.delete(id)}}
- for(const n of chosen){const hz=frequency(n);if(!Number.isFinite(hz)||hz<=0)continue;let v=audioVoices.get(n.id);if(v){v.source.setFrequency(hz);if(v.mixEntry)v.mixEntry.voice=n.voice;continue}const source=sourceForAudio().create(audioContext,hz,n.voice,n.id);const gain=audioContext.createGain();gain.gain.value=0;source.node.connect(gain);const mixGain=audioContext.createGain();mixGain.gain.value=mixerMultiplier(n.voice,n.id);gain.connect(mixGain);mixGain.connect(audioMaster);const mixEntry={ctx:audioContext,gain:mixGain,voice:n.voice,noteId:n.id};mixerGainNodes.add(mixEntry);attachVoiceCleanup(source.osc,gain,mixEntry);source.osc.start();gain.gain.setTargetAtTime(1,now,.025);audioVoices.set(n.id,{source,gain,mixEntry})}
+ for(const n of chosen){const hz=frequency(n);if(!Number.isFinite(hz)||hz<=0)continue;let v=audioVoices.get(n.id);if(v){v.source.setFrequency(hz);if(v.mixEntry)v.mixEntry.voice=n.voice;continue}const source=createAudioSource(audioContext,hz,n.voice,n.id);const gain=audioContext.createGain();gain.gain.value=0;source.node.connect(gain);const mixGain=audioContext.createGain();mixGain.gain.value=mixerMultiplier(n.voice,n.id);gain.connect(mixGain);mixGain.connect(audioMaster);const mixEntry={ctx:audioContext,gain:mixGain,voice:n.voice,noteId:n.id};mixerGainNodes.add(mixEntry);attachVoiceCleanup(source.osc,gain,mixEntry);source.osc.start();gain.gain.setTargetAtTime(1,now,.025);audioVoices.set(n.id,{source,gain,mixEntry})}
  updateMixerAudio();updateAudioVolume();
  const audible=chosen.filter(n=>mixerMultiplier(n.voice,n.id)>0);
  $('audioStatus').textContent=chosen.length
@@ -1403,7 +1402,7 @@ function refreshPlayingTimbres(){
   for(const n of selected){
    const old=audioVoices.get(n.id);if(!old)continue;
    const hz=frequency(n);if(!Number.isFinite(hz)||hz<=0)continue;
-   const source=sourceForAudio().create(audioContext,hz,n.voice,n.id);
+   const source=createAudioSource(audioContext,hz,n.voice,n.id);
    const gain=audioContext.createGain();gain.gain.value=0;
    source.node.connect(gain);gain.connect(old.mixEntry.gain);
    attachVoiceCleanup(source.osc,gain,old.mixEntry);
@@ -1419,7 +1418,7 @@ function updateAudioVolume(){const vol=Number($('audioVolume').value)/100;$('aud
 async function playAudio(){
  const request=++audioRequestToken;
  if(pPlaySession)pStopPlayback();
- if(!audioChosen.size){$('audioStatus').textContent='再生する音を1つ以上選んでください。';return}
+ if(!selected.length){$('audioStatus').textContent='再生する音を1つ以上選んでください。';return}
  try{
   const Ctx=window.AudioContext||window.webkitAudioContext;
   if(!Ctx)throw Error('このブラウザは音声生成に対応していません');
@@ -1438,14 +1437,12 @@ function stopAudio(){++audioRequestToken;audioPlaying=false;if(audioContext){con
 $('audioPlay').addEventListener('click',playAudio);$('audioStop').addEventListener('click',()=>{stopAudio();pStopPlayback()});$('audioVolume').addEventListener('input',updateAudioVolume);
 // Keep playback requested while the document is hidden. iOS may still suspend Web Audio.
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&audioPlaying&&audioContext?.state==='suspended'){$('audioStatus').textContent='OSにより音声が中断されました。必要に応じて再生を押してください。'}});
-window.addEventListener('pagehide',e=>{if(!e.persisted){/* OS/browser owns background audio lifetime. */}});
 
-$('addnote').onclick=()=>{if(selected.length>=12)return;const n={name:'C',oct:4,id:nextId++,adjust:0,ratio:null,voice:'Lead'};selected.push(n);audioChosen.add(n.id);draw();display();pSyncVoiceLinks()};$('pitch').onchange=()=>{refreshAnchor();display()};$('anchorMode').onchange=()=>{refreshAnchor();display()};$('temperament').onchange=()=>{display()};$('reset').onclick=()=>{selected.forEach(n=>{n.ratio=null;n.adjust=0});refreshAnchor();display()};$('resetAll').onclick=()=>{selected=initialNotes();nextId=5;lockedId=1;$('pitch').value='440';$('temperament').value='just';$('anchorMode').value='equal';refreshAnchor();draw();display();pResetVoiceLinks();resetMixerTracks()};refreshAnchor();draw();display();
+$('addnote').onclick=()=>{if(selected.length>=12)return;const n={name:'C',oct:4,id:nextId++,adjust:0,ratio:null,voice:'Lead'};selected.push(n);draw();display();pSyncVoiceLinks()};$('pitch').onchange=()=>{refreshAnchor();display()};$('anchorMode').onchange=()=>{refreshAnchor();display()};$('temperament').onchange=()=>{display()};$('reset').onclick=()=>{selected.forEach(n=>{n.ratio=null;n.adjust=0});refreshAnchor();display()};$('resetAll').onclick=()=>{selected=initialNotes();nextId=5;lockedId=1;$('pitch').value='440';$('temperament').value='just';$('anchorMode').value='equal';refreshAnchor();draw();display();pResetVoiceLinks();resetMixerTracks()};refreshAnchor();draw();display();
 
 // Progression MVP: independent from the spectrum/wave rendering.
-var pNames=noteLetters.flatMap(letter=>accidentals.map(a=>letter+a.value));
-var pVoices=['Tenor','Lead','Baritone','Bass'];
 const pInitialVoices=['Tenor','Lead','Baritone','Bass'];
+var pVoices=[...pInitialVoices];
 const pVoiceAbbr={Tenor:'T',Lead:'L',Baritone:'Br',Bass:'Bs',Soprano:'S',Alto:'A',Mezzo:'M',Top:'Tp',Second:'2nd'};
 function pTag(i){return pVoiceAbbr[pVoices[i]]||'V'+(i+1)}
 // Keep one identity-linked Basic Settings note per progression part. Labels are
@@ -1501,14 +1498,34 @@ function pResetVoiceLinks(){
  pVoiceIds=pInitialVoices.map(v=>selected.find(n=>n.voice===v)?.id??null);
  pSyncVoiceLinks();
 }
-// C major: I - I7 - IV - V7 - I. Voice order: Tenor, Lead, Baritone, Bass.
-var pChords=[
- [{name:'E',oct:4},{name:'C',oct:4},{name:'G',oct:3},{name:'C',oct:3}],
- [{name:'E',oct:4},{name:'C',oct:4},{name:'B♭',oct:3},{name:'G',oct:3}],
- [{name:'F',oct:4},{name:'C',oct:4},{name:'A',oct:3},{name:'F',oct:3}],
- [{name:'F',oct:4},{name:'B',oct:3},{name:'G',oct:3},{name:'D',oct:3}],
- [{name:'E',oct:4},{name:'C',oct:4},{name:'G',oct:3},{name:'C',oct:3}]
-];
+// Literal preset pitches, ordered Tenor, Lead, Baritone, Bass.
+const pPresetLibrary={
+ cadence:{title:'サンプル１',tonic:'C',parts:[
+  ['E4','E4','F4','F4','E4'],
+  ['C4','C4','C4','B3','C4'],
+  ['G3','B♭3','A3','G3','G3'],
+  ['C3','G3','F3','D3','C3']
+ ]},
+ sample2:{title:'サンプル2',tonic:'C',parts:[
+  ['C4','D4','E4','E4','F4','G4','F4','F4','E4'],
+  ['C4','C4','C4','C4','C4','C4','C4','B3','C4'],
+  ['C4','B3','A3','B♭3','A3','G3','A3','G3','G3'],
+  ['C4','B3','A3','G3','F3','E3','D3','D3','C3']
+ ]},
+ sample3:{title:'サンプル3',tonic:'C',parts:[
+  ['C3','D3','E3','F3','G3','A3','B3','C4','D4','E4'],
+  ['C3','D3','E3','F3','G3','A3','B3','C4','C4','C4'],
+  ['C3','D3','E3','F3','G3','G3','G3','G3','A♭3','G3'],
+  ['C3','C3','C3','C3','C3','C3','C3','C3','F3','C3']
+ ]}
+};
+for(const [key,preset] of Object.entries(pPresetLibrary))$('pPreset').add(new Option(preset.title,key));
+function pPresetChords(preset){
+ const count=Math.max(...preset.parts.map(part=>part.length));
+ return Array.from({length:count},(_,j)=>preset.parts.map(part=>pPresetNote(part[j])));
+}
+// Initial progression is an independent copy of Sample 1.
+var pChords=pPresetChords(pPresetLibrary.cadence);
 var pSelected=0,pViewInitialized=false;
 // Per-chord tuning is optional. Null means standard melody/harmony calculation.
 // Each entry is either {anchor:part index, refHz:null, ratios:[...], offsets:[...]}
@@ -1560,30 +1577,6 @@ function pTuningAnchorLabel(j,idx){
 }
 function pMarkChordTuningEdited(){pPresetDetach();pRender();if(pPlaySession)refreshProgressionSound()}
 
-// Presets store literal score pitches in their original key.
-// Each preset stores one equal-length note series per voice (Tenor / Lead / Baritone / Bass).
-// Original spellings, octaves, and rests are preserved without implicit transposition.
-// Preset parts are ordered Tenor, Lead, Baritone, Bass; retain literal pitches.
-const pPresetLibrary={
- cadence:{title:'サンプル１',tonic:'C',parts:[
-  ['E4','E4','F4','F4','E4'],
-  ['C4','C4','C4','B3','C4'],
-  ['G3','B♭3','A3','G3','G3'],
-  ['C3','G3','F3','D3','C3']
- ]},
- sample2:{title:'サンプル2',tonic:'C',parts:[
-  ['C4','D4','E4','E4','F4','G4','F4','F4','E4'],
-  ['C4','C4','C4','C4','C4','C4','C4','B3','C4'],
-  ['C4','B3','A3','B♭3','A3','G3','A3','G3','G3'],
-  ['C4','B3','A3','G3','F3','E3','D3','D3','C3']
- ]},
- sample3:{title:'サンプル3',tonic:'C',parts:[
-  ['C3','D3','E3','F3','G3','A3','B3','C4','D4','E4'],
-  ['C3','D3','E3','F3','G3','A3','B3','C4','C4','C4'],
-  ['C3','D3','E3','F3','G3','G3','G3','G3','A♭3','G3'],
-  ['C3','C3','C3','C3','C3','C3','C3','C3','F3','C3']
- ]}
-};
 let pActivePreset='';
 function pPresetDetach(){
  if($('pTransStatus'))$('pTransStatus').textContent='';
@@ -1697,9 +1690,8 @@ function pLoadPreset(code){
  if(pPlaySession)pStopPlayback();
  // Keep the literal pitches and rests exactly as registered, without an implicit
  // key change or a major-to-minor transformation.
- const voices=preset.parts.map(part=>part.map(token=>pPresetNote(token)));
- const count=Math.max(...voices.map(notes=>notes.length));
- pChords=Array.from({length:count},(_,j)=>voices.map(notes=>notes[j]||null));
+ pChords=pPresetChords(preset);
+ const count=pChords.length;
  pChordTunings=pChords.map(()=>null);
  pSelected=0;pActivePreset=code;$('pPreset').value=code;
  pSetKeyControls(preset.tonic,'major');
@@ -1738,7 +1730,6 @@ function pImportBasicChord(){
  $('pInferStatus').textContent='基本設定の'+used.size+'音を和音 '+(pSelected+1)+' に追加し、調律比・微調整を引き継ぎました。'+(selected.length>used.size?'進行は4声部固定のため、他の'+(selected.length-used.size)+'音は読み込んでいません。':'');
 }
 
-function pFifths(name){return pythFifthsOf(name)}
 function pInterval(a,b,type){var d=midi(b)-midi(a);if(type==='equal')return Math.pow(2,d/12);if(type==='pyth')return exactPythRatio(a,b);const o=Math.floor(d/12),i=((d%12)+12)%12;return (i===10?7/4:just[i])*2**o}
 function pAbsolute(note,type){
  if(type==='equal')return et(midi(note));
@@ -2081,7 +2072,7 @@ function pRender(){try{
  var scoreScroll=$('pScore').scrollLeft,gridScroll=$('pGrid').scrollLeft;
  $('pGrid').innerHTML=html;pScoreRender(data);pTuneEditorRender();pViewInitialized=true;
  $('pScore').scrollLeft=scoreScroll;$('pGrid').scrollLeft=gridScroll;
- refreshPlaybackSource();vizRefreshChordPicker();
+ vizRefreshChordPicker();
  $('pStatus').textContent=pChords.length+'和音を表示中（割当 '+pVoiceIds.filter((id,i)=>pSlotActive(i)).length+'/4声部） ／ 選択：和音 '+(pSelected+1)+'（'+pActiveChordName(pChords[pSelected])+'） ／ A4='+$('pitch').value+' Hz ／ 旋律のピタゴラス基準：'+pKeyDecode($('pTransFrom').value).root;
  $('pGrid').querySelectorAll('[data-select-chord]').forEach(el=>el.onclick=function(){pSelected=Number(this.getAttribute('data-select-chord'));pRender()});
  $('pGrid').querySelectorAll('select').forEach(el=>el.onchange=function(){
@@ -2150,7 +2141,7 @@ function pStopPlayback(){
  setPlaybackButtonState(audioPlaying?'basic':null);$('pPlaySelected').disabled=false;$('pStop').disabled=true;if(!audioPlaying)$('audioStop').disabled=true;if($('vizAudioStatus'))$('vizAudioStatus').textContent='停止中';
  $('pPlayStatus').textContent='停止中';
 }
-async function pStartPlayback(fromSelected,holdSelected=false,visualMode=false){
+async function pStartPlayback(fromSelected,holdSelected=false){
  if(audioPlaying)stopAudio();pStopPlayback();var token=pPlayToken;
  try{
   var bpm=Number($('pBpm').value),beats=Number($('pBeats').value);
@@ -2223,7 +2214,6 @@ $('pTransfer').onclick=function(){try{
   mixerTrack(note).source=previousSourceByVoice.get(note.voice)||'sine';
  }
  lockedId=(selected.find(function(n){return n.voice==='Bass'})||selected[0]).id;
- audioChosen.clear();selected.forEach(function(n){audioChosen.add(n.id)});
  $('temperament').value=$('pHarmony').value;
  refreshAnchor();waveResetOnNextRender=true;draw();display();$('noteFold').open=true;
  if(audioPlaying)syncAudioVoices();setTab('tuning');
@@ -2237,7 +2227,7 @@ $('pGrid').addEventListener('scroll',function(){pSyncScroll($('pGrid'),$('pScore
 $('pitch').addEventListener('change',pRender);$('pInfer').onclick=pImportBasicChord;pInitKeyControls();pRender();
 
 // Visualization cards: no fixed count limit. Visible cards only are animated.
-const vizCards=[];let vizNextId=0,vizPaused=false,vizFrame=0,vizLastDraw=0;
+const vizCards=[];let vizNextId=0,vizPaused=false,vizLastDraw=0;
 function vizTuningOverride(){const sel=$('vizHarmony');if(!sel||sel.value==='follow')return null;return sel.value==='main'?$('temperament').value:sel.value}
 // Stable note IDs keep identical voice labels and harmonic choices distinct.
 function vizExpandNotes(notes,source){
@@ -2279,7 +2269,7 @@ function vizReferenceInfo(card,info=vizAvailable()){
 }
 function vizRefreshChordPicker(){
  const picker=$('vizChordPick');if(!picker)return;
- const old=picker.value,labels=pChords.map((ch,i)=>'和音 '+(i+1)+'：'+pActiveChordName(ch));
+ const labels=pChords.map((ch,i)=>'和音 '+(i+1)+'：'+pActiveChordName(ch));
  if(picker.options.length!==labels.length||labels.some((label,i)=>picker.options[i]?.text!==label)){
   picker.replaceChildren();labels.forEach((label,i)=>picker.add(new Option(label,String(i))));
  }
@@ -2830,7 +2820,7 @@ function vizDraw(card,info){
  el.querySelector('.viz-foot').textContent=info.source+' ／ X '+fx.toFixed(3)+' Hz ／ Y '+fy.toFixed(3)+' Hz'+(card.type==='harm'?' ／ 描画 '+card.harmDuration+'秒 ／ 減衰 '+card.decay+' ／ 透明度 '+card.harmOpacity+'%':'');
 }
 function vizAnimate(ts){
- vizFrame=requestAnimationFrame(vizAnimate);
+ requestAnimationFrame(vizAnimate);
  if(vizPaused||activeTab!=='visual'||document.hidden||ts-vizLastDraw<45)return;
  vizLastDraw=ts;
  const cards=vizCards.filter(vizCardVisible);if(!cards.length)return;
@@ -2842,7 +2832,7 @@ function vizAnimate(ts){
   vizDraw(card,info);card._lastStaticKey=vizStaticKey(card,info,card.element.querySelector('canvas'));
  }catch(e){card.element.querySelector('.viz-foot').textContent='描画エラー：'+e.message;console.error(e)}}
 }
-$('vizChordPick').onchange=()=>{if(pPlaySession)pStopPlayback();pSelected=Number($('vizChordPick').value);pRender()};$('vizPlayAll').onclick=()=>pStartPlayback(false,false,true);$('vizPlayHold').onclick=()=>pStartPlayback(true,true,true);$('vizStopAudio').onclick=pStopPlayback;vizRefreshChordPicker();refreshMixerSources();
+$('vizChordPick').onchange=()=>{if(pPlaySession)pStopPlayback();pSelected=Number($('vizChordPick').value);pRender()};$('vizPlayAll').onclick=()=>pStartPlayback(false);$('vizPlayHold').onclick=()=>pStartPlayback(true,true);$('vizStopAudio').onclick=pStopPlayback;vizRefreshChordPicker();refreshMixerSources();
 $('vizAddLiss').onclick=()=>vizAdd('liss');$('vizAddHarm').onclick=()=>vizAdd('harm');$('vizAddChladni').onclick=()=>vizAdd('chladni');$('vizAddRose').onclick=()=>vizAdd('rose');$('vizAddFourier').onclick=()=>vizAdd('fourier');$('vizAddSpiro').onclick=()=>vizAdd('spiro');$('vizAddLorenz').onclick=()=>vizAdd('lorenz');
 setPlaybackButtonState(null);
 $('vizHarmony').onchange=()=>{if(pPlaySession)refreshProgressionSound();vizLastDraw=0};
@@ -2856,7 +2846,7 @@ for(const select of document.querySelectorAll('select')){
  }
 }
 waveRefreshSelectors();
-vizFrame=requestAnimationFrame(vizAnimate);
+requestAnimationFrame(vizAnimate);
 
 // v4.48: Compact mobile toolbar mirrors the original playback controls without
 // introducing a second playback state. All three buttons delegate to originals.

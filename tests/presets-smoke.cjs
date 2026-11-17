@@ -40,6 +40,11 @@ const expected = {
     assert.deepEqual(await page.locator('#pPreset option').allTextContents(),
       ['— プリセットを選択 —', 'サンプル１', 'サンプル2', 'サンプル3']);
     assert.deepEqual(await page.evaluate(() => Object.keys(pPresetLibrary)), Object.keys(expected));
+    const initial = await page.evaluate(() => [0, 1, 2, 3].map(i =>
+      pChords.map(chord => chord[i].name + chord[i].oct).join(' ')));
+    assert.deepEqual(initial, expected.cadence, 'initial progression retains Sample 1 pitches');
+    await page.locator('#pGrid select[data-pi="0"][data-pj="0"][data-kind="letter"]').selectOption('D');
+    assert.equal(await page.evaluate(() => pPresetLibrary.cadence.parts[0][0]), 'E4', 'editing initial progression leaves the preset unchanged');
     for (const [code, voices] of Object.entries(expected)) {
       await page.selectOption('#pPreset', code);
       if (code === 'sample2') assert.equal(await page.evaluate(() => pChords.length), 9, 'sample2 has exactly nine chords');
