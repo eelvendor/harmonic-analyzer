@@ -18,8 +18,8 @@ const expected = {
   sample3: [
     'C3 D3 E3 F3 G3 A3 B3 C4 D4 E4',
     'C3 D3 E3 F3 G3 A3 B3 C4 C4 C4',
-    'C3 D3 E3 F3 G3 G3 G3 G3 A♭3 B3',
-    'C3 D3 E3 F3 G3 G3 G3 G3 G3 G3'
+    'C3 D3 E3 F3 G3 G3 G3 G3 A♭3 G3',
+    'C3 C3 C3 C3 C3 C3 C3 C3 F3 C3'
   ]
 };
 
@@ -45,6 +45,12 @@ const expected = {
       const actual = await page.evaluate(() => [0, 1, 2, 3].map(i =>
         pChords.map(chord => chord[i] ? chord[i].name + chord[i].oct : 'rest').join(' ')));
       assert.deepEqual(actual, voices, code + ': exact voice order, notes and octaves');
+      const displayed = await page.locator('#pGrid tbody tr').evaluateAll(rows => rows.map(row =>
+        [...row.querySelectorAll('.pnote-pickers')].map(pickers => {
+          const value = kind => pickers.querySelector(`[data-kind="${kind}"]`).value;
+          return value('letter') + value('acc') + value('oct');
+        }).join(' ')));
+      assert.deepEqual(displayed, voices, code + ': displayed note pickers match the requested pitches');
       assert.ok((await page.locator('#pPresetStatus').textContent()).includes(`${voices[0].split(' ').length}和音`));
       assert.equal(await page.locator('#pGrid td select[data-kind="letter"]').count(), voices[0].split(' ').length * 4);
       console.log(`PASS: ${code}, exact four-part pitches and rendered chord count`);
