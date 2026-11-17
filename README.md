@@ -1,5 +1,5 @@
-# harmonic-analyzer
-Harmonic Analyzer development
+# Harmony Visualizer
+Harmony Visualizer development
 
 ## Playback regression checks
 
