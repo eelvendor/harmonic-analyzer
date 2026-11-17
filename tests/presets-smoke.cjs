@@ -10,10 +10,10 @@ const expected = {
     'G3 B♭3 A3 G3 G3', 'C3 G3 F3 D3 C3'
   ],
   sample2: [
-    'C4 C4 C4 C4 C4 C4 C4 C4 D4 E4',
-    'C4 C4 C4 C4 C4 C4 C4 C4 C4 C4',
-    'C4 B3 A3 G3 G3 G3 G3 G3 G3 G3',
-    'C4 B3 A3 G3 F3 E3 D3 C3 C3 C3'
+    'C4 D4 E4 E4 F4 G4 F4 F4 E4',
+    'C4 C4 C4 C4 C4 C4 C4 B3 C4',
+    'C4 B3 A3 B♭3 A3 G3 A3 G3 G3',
+    'C4 B3 A3 G3 F3 E3 D3 D3 C3'
   ],
   sample3: [
     'C3 D3 E3 F3 G3 A3 B3 C4 D4 E4',
@@ -42,6 +42,7 @@ const expected = {
     assert.deepEqual(await page.evaluate(() => Object.keys(pPresetLibrary)), Object.keys(expected));
     for (const [code, voices] of Object.entries(expected)) {
       await page.selectOption('#pPreset', code);
+      if (code === 'sample2') assert.equal(await page.evaluate(() => pChords.length), 9, 'sample2 has exactly nine chords');
       const actual = await page.evaluate(() => [0, 1, 2, 3].map(i =>
         pChords.map(chord => chord[i] ? chord[i].name + chord[i].oct : 'rest').join(' ')));
       assert.deepEqual(actual, voices, code + ': exact voice order, notes and octaves');
