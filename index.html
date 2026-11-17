@@ -530,7 +530,7 @@ input[type="checkbox"]:focus-visible {outline:2px solid #dedede;outline-offset:3
 
 </div>
 <div hidden="" id="progressPane">
-<div class="summary" id="pPresetPanel" style="margin-bottom:12px"><label for="pPreset"><strong>コード進行プリセット</strong></label><select class="full" id="pPreset"><option selected="" value="">— プリセットを選択 —</option><option value="cadence">カデンツ</option><option value="lead_f_11">サンプル1</option><option value="sample_g_13">サンプル2</option><option value="sample_c_11">サンプル3</option><option value="beethoven_ode_15">ベートーヴェン：歓喜の歌</option><option value="dvorak_largo_16">ドヴォルザーク：新世界より 第2楽章</option><option value="bernstein_tonight_harmony">バーンスタイン：Tonight（和声参考）</option><option value="canon">カノン進行</option><option value="royal">王道進行</option><option value="marusa">丸サ進行</option></select><p aria-live="polite" class="small" id="pPresetStatus"></p></div>
+<div class="summary" id="pPresetPanel" style="margin-bottom:12px"><label for="pPreset"><strong>コード進行プリセット</strong></label><select class="full" id="pPreset"><option selected="" value="">— プリセットを選択 —</option><option value="cadence">サンプル１</option><option value="sample2">サンプル2</option><option value="sample3">サンプル3</option></select><p aria-live="polite" class="small" id="pPresetStatus"></p></div>
 <div class="summary p-transpose-panel" id="pTransposePanel">
  <strong>移調</strong>
  <div class="p-transpose-fields">
@@ -1547,85 +1547,25 @@ function pMarkChordTuningEdited(){pPresetDetach();pRender();if(pPlaySession)refr
 // Presets store literal score pitches in their original key.
 // Each preset stores one equal-length note series per voice (Tenor / Lead / Baritone / Bass).
 // Original spellings, octaves, and rests are preserved without implicit transposition.
-// The standard progressions below use example four-part voicings, not a copyrighted score.
+// Preset parts are ordered Tenor, Lead, Baritone, Bass; retain literal pitches.
 const pPresetLibrary={
- cadence:{title:'カデンツ',tonic:'C',parts:[
+ cadence:{title:'サンプル１',tonic:'C',parts:[
   ['E4','E4','F4','F4','E4'],
   ['C4','C4','C4','B3','C4'],
   ['G3','B♭3','A3','G3','G3'],
   ['C3','G3','F3','D3','C3']
  ]},
- lead_f_11:{title:'サンプル1',tonic:'F',parts:[
-  ['E4','F4','E♭4','D4','D4','D♭4','C4','B3','B♭3','B♭3','A3'],
-  ['D4','C4','A3','B♭3','A3','G3','F3','A3','C3','D3','F3'],
-  ['B♭3','A3','F3','F3','F3','F3','D3','F3','E3','E3','C3'],
-  ['G3','F3','C3','B♭2','B♭2','B♭2','A2','G2','G2','G2','F2']
+ sample2:{title:'サンプル2',tonic:'C',parts:[
+  ['C4','C4','C4','C4','C4','C4','C4','C4','D4','E4'],
+  ['C4','C4','C4','C4','C4','C4','C4','C4','C4','C4'],
+  ['C4','B3','A3','G3','G3','G3','G3','G3','G3','G3'],
+  ['C4','B3','A3','G3','F3','E3','D3','C3','C3','C3']
  ]},
- // Sample 2: 13 source chords, original final tonic G. User notation l3/l2
- // is interpreted as A3/A2 (la), preserving every other note and octave.
- sample_g_13:{title:'サンプル2',tonic:'G',parts:[
-  ['F♯3','G3','A3','B3','E4','D4','B3','A3','G3','E4','F♯4','G4','G4'],
-  ['F♯3','G3','A3','B3','D4','E4','E4','E4','G3','C4','C4','C4','B3'],
-  ['F♯3','G3','G3','G3','G3','G3','G3','G3','G3','G3','G3','A3','D3'],
-  ['F♯3','E3','E♭3','D3','C3','B2','D3','C3','G3','A2','D2','D2','G2']
- ]},
- // Sample 3: 11 chords in C major, Lead is the melodic voice.
- // The first two chords are solo Lead G3; null tokens are actual rests.
- sample_c_11:{title:'サンプル3',tonic:'C',parts:[
-  [null,null,'A3','A3','A3','B♭3','A3','G3','F♯3','F3','E3'],
-  ['G3','G3','G3','F3','G3','C4','C4','C4','C4','C4','C4'],
-  [null,null,'E♭3','E♭3','E♭3','G♭3','C3','B♭2','A2','A♭2','G2'],
-  [null,null,'C3','C3','C3','A♭2','F2','E♭2','D2','D♭2','C2']
- ]},
- // Beethoven, Symphony No. 9 / Ode to Joy, 4th movement. Original-key
- // public-domain opening melody (15 note events) assigned to Lead.
- // The remaining three voices are a new illustrative harmonization,
- // NOT a transcription of Beethoven's orchestration. Rhythms are NOT encoded.
- beethoven_ode_15:{title:'ベートーヴェン：歓喜の歌',tonic:'D',parts:[
-  ['A4','A4','B4','D5','C♯5','B4','A4','G4','F♯4','F♯4','G4','A4','A4','G4','G4'],
-  ['F♯4','F♯4','G4','A4','A4','G4','F♯4','E4','D4','D4','E4','F♯4','F♯4','E4','E4'],
-  ['D4','D4','D4','F♯4','E4','D4','D4','B3','A3','A3','B3','D4','D4','C♯4','C♯4'],
-  ['D3','D3','G2','D3','A2','G2','D3','E3','D3','D3','E3','D3','D3','A2','A2']
- ],melodyVoice:1,shortNote:'Leadは原曲主題、伴奏は独自の和声例。',note:'冒頭の旋律15音をLeadに配置。ほかの3声部はアプリ用の独自和声例で、原曲の管弦楽総譜ではありません。音価・リズムは再現していません。'},
- // Dvorak, Symphony No. 9 / Largo, 2nd movement, English horn theme.
- // Original key D-flat major. The melody is public-domain and occupies
- // Lead; other voices form a NEW illustrative setting, not Dvorak's score.
- dvorak_largo_16:{title:'ドヴォルザーク：新世界より 第2楽章',tonic:'D♭',parts:[
-  ['A♭4','D♭5','D♭5','A♭4','A♭4','F4','A♭4','A♭4','D♭5','A♭4','A♭4','A♭4','D♭5','D♭5','A♭4','A♭4'],
-  ['F4','A♭4','A♭4','F4','E♭4','D♭4','E♭4','F4','A♭4','F4','E♭4','F4','A♭4','A♭4','F4','E♭4'],
-  ['D♭4','F4','F4','D♭4','C4','A♭3','C4','D♭4','F4','D♭4','C4','D♭4','F4','F4','D♭4','C4'],
-  ['D♭3','D♭3','D♭3','D♭3','A♭2','D♭3','A♭2','D♭3','D♭3','D♭3','A♭2','D♭3','D♭3','D♭3','D♭3','A♭2']
- ],melodyVoice:1,shortNote:'Leadは原曲主題、伴奏は独自の和声例。',note:'イングリッシュホルン主題の冒頭16音をLeadに配置。ほかの3声部はアプリ用の独自和声例で、ドヴォルザークの原曲伴奏ではありません。音価・リズムは再現していません。'},
- // Bernstein / Sondheim, Tonight from West Side Story (1957).
- // Source: publicly described jazz lead-sheet opening changes in Ab.
- // Copyrighted melody and original arrangement are NOT reproduced.
- // All voices are newly chosen chord tones for studying the harmony only.
- bernstein_tonight_harmony:{title:'バーンスタイン：Tonight（和声参考）',tonic:'A♭',parts:[
-  ['E♭4','F4','E♭4','F4','E♭4','C4','D4','E4','F♯4','A♭4','F♯4','A♭4'],
-  ['C4','D4','C4','D4','C4','A♭3','B♭3','C♯4','D♯4','F4','D♯4','F♭4'],
-  ['A♭3','B♭3','A♭3','B♭3','A♭3','F3','G3','A♯3','B3','D♭4','B3','D♭4'],
-  ['A♭2','A♭2','A♭2','A♭2','A♭2','F2','G2','F♯2','B2','B2','B2','D♭3']
- ],shortNote:'独自の四声部による和声例（原曲の旋律なし）。',note:'A♭ Majorのジャズ用リードシートの冒頭12和音を参考にした独自の四声部配置です。原曲の旋律・原曲の伴奏・リズムは収録していません。'},
- // Canon: I – V – vi – iii – IV – I – IV – V; bass descends C3–B2–A2–G2–F2–E2.
- canon:{title:'カノン進行',tonic:'C',parts:[
-  ['E4','D4','E4','E4','F4','E4','F4','G4'],
-  ['C4','B3','C4','B3','C4','C4','C4','D4'],
-  ['G3','G3','A3','G3','A3','G3','A3','B3'],
-  ['C3','B2','A2','G2','F2','E2','F2','G2']
- ]},
- // Royal / 4536: IV – V – iii – vi.
- royal:{title:'王道進行',tonic:'C',parts:[
-  ['F4','G4','E4','E4'],
-  ['C4','D4','B3','C4'],
-  ['A3','B3','G3','A3'],
-  ['F2','G2','E2','A2']
- ]},
- // Marusa / 4361: IVmaj7 – III7 – vi7 – I7.
- marusa:{title:'丸サ進行',tonic:'C',parts:[
-  ['E4','D4','E4','E4'],
-  ['C4','B3','C4','B♭3'],
-  ['A3','G♯3','G3','G3'],
-  ['F2','E2','A2','C3']
+ sample3:{title:'サンプル3',tonic:'C',parts:[
+  ['C3','D3','E3','F3','G3','A3','B3','C4','D4','E4'],
+  ['C3','D3','E3','F3','G3','A3','B3','C3','C3','C3'],
+  ['C3','D3','E3','F3','G3','G3','G3','G3','A♭3','B3'],
+  ['C3','D3','E3','F3','G3','G3','G3','G3','G3','G3']
  ]}
 };
 let pActivePreset='';
@@ -1747,9 +1687,9 @@ function pLoadPreset(code){
  pChordTunings=pChords.map(()=>null);
  pSelected=0;pActivePreset=code;$('pPreset').value=code;
  pSetKeyControls(preset.tonic,'major');
- if(code==='sample_c_11'||preset.melodyVoice===1)$('pVoice').value='1';
+ if(preset.melodyVoice===1)$('pVoice').value='1';
  pRender();
- $('pPresetStatus').textContent=preset.title+'（原調：'+pKeyLabel(pKeyValue(preset.tonic,preset.mode||'major'))+'・'+count+'和音）を登録音高のまま読み込みました。'+(preset.shortNote||'')+(code==='sample_g_13'?' 入力の「l3」「l2」はA3・A2として登録しています。':'');
+ $('pPresetStatus').textContent=preset.title+'（原調：'+pKeyLabel(pKeyValue(preset.tonic,preset.mode||'major'))+'・'+count+'和音）を登録音高のまま読み込みました。'+(preset.shortNote||'');
  $('pInferStatus').textContent='';
 }
 $('pPreset').addEventListener('change',function(){if(this.value)pLoadPreset(this.value);else pPresetDetach()});
